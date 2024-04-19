@@ -1,0 +1,41 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet author="user" id="books-data">
+        <insert tableName="books">
+            <column name="id" value="4" />
+            <column name="author_id" value="1" />
+            <column name="name" value="Book_1" />
+            <column name="annotation" value="Annotation_1" />
+            <column name="info" value="Info_1" />
+            <column name="number" value="5" />
+        </insert>
+        <insert tableName="books">
+            <column name="id" value="5" />
+            <column name="author_id" value="2" />
+            <column name="name" value="Book_2" />
+            <column name="annotation" value="Annotation_2" />
+            <column name="info" value="Info_2" />
+            <column name="number" value="10" />
+        </insert>
+        <insert tableName="books">
+            <column name="id" value="6" />
+            <column name="author_id" value="3" />
+            <column name="name" value="Book_3" />
+            <column name="annotation" value="Annotation_3" />
+            <column name="info" value="Info_3" />
+            <column name="number" value="50" />
+        </insert>
+        <insert tableName="books">
+            <column name="id" value="7" />
+            <column name="author_id" value="1" />
+            <column name="name" value="Book_4" />
+            <column name="annotation" value="Annotation_4" />
+            <column name="info" value="Info_4" />
+            <column name="number" value="54" />
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

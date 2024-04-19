@@ -1,0 +1,25 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet author="user" id="users-subscriptions-schema">
+        <createTable tableName="users_favoritebooks">
+            <column name="user_id" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <column name="favoritebook_id" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            
+        </createTable>
+        <addPrimaryKey columnNames="user_id, favoritebook_id" constraintName="PK_SOME_TABLE" tableName="users_favoritebooks" />
+        <addForeignKeyConstraint constraintName="fk_us_user_id"
+            baseTableName="users_favoritebooks" baseColumnNames="user_id"
+            referencedTableName="users" referencedColumnNames="id" />
+        <addForeignKeyConstraint constraintName="fk_us_favoritebook_id"
+            baseTableName="users_favoritebooks" baseColumnNames="favoritebook_id"
+            referencedTableName="books" referencedColumnNames="id" />
+    </changeSet>
+
+</databaseChangeLog>

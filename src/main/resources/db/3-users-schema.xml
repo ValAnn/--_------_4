@@ -1,0 +1,27 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet author="user" id="users-schema">
+        <createTable tableName="users">
+            <column name="id" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <column name="login" type="varchar(20)">
+                <constraints nullable="false" unique="true" />
+            </column>
+        </createTable>
+        <addPrimaryKey columnNames="id" constraintName="pk_users" tableName="users" />
+    </changeSet>
+
+    <!-- <changeSet author="user" id="items-add-user-id-column">
+        <addColumn tableName="items">
+            <column name="user_id" type="bigint " />
+        </addColumn>
+        <addForeignKeyConstraint constraintName="fk_item_user_id"
+            baseTableName="items" baseColumnNames="user_id"
+            referencedTableName="users" referencedColumnNames="id" />
+    </changeSet> -->
+
+</databaseChangeLog>
